@@ -1,0 +1,589 @@
+{
+  "course": {
+    "title": "U.S. History",
+    "teacher": "M. Hallman",
+    "year": "2026-27",
+    "department": "Aurora Public Schools — Social Studies",
+    "thematicLenses": [
+      "Who decides, who pays?",
+      "Promise vs. reality",
+      "Technology and everyday life"
+    ],
+    "closingPrompt": "What is owed?",
+    "districtCurriculumMap": "https://docs.google.com/document/d/1-Ir1EvR16GZ-avD1VsmfYvzHs7vRfTJJSXkVUnNRImg/edit?tab=t.85pm9w14f7e7#heading=h.2rydupp8wclc",
+    "lessonPlanTemplate": "",
+    "priorityStandards": [
+      {
+        "id": "1.1",
+        "code": "History HS 1.1",
+        "description": "Apply the historical method of inquiry to formulate compelling questions, evaluate primary and secondary sources, analyze and interpret data, and argue for an interpretation defended by textual evidence."
+      },
+      {
+        "id": "1.2a",
+        "code": "History HS 1.2.a",
+        "description": "Analyze continuity and change over the course of United States history."
+      },
+      {
+        "id": "1.2b",
+        "code": "History HS 1.2.b",
+        "description": "Investigate causes and effects of significant events throughout United States history."
+      },
+      {
+        "id": "1.2g",
+        "code": "History HS 1.2.g",
+        "description": "Analyze how opposing perspectives, compromise, and cooperation have shaped national unity and diversity."
+      },
+      {
+        "id": "1.2h",
+        "code": "History HS 1.2.h",
+        "description": "Analyze and evaluate ideas critical to the understanding of American history."
+      }
+    ]
+  },
+
+  "foundations": {
+    "title": "Why This Course Is Built This Way",
+    "subtitle": "The pedagogical rationale behind the design",
+    "coreArgument": "This course treats critical thinking not as a skill to be taught separately from content, but as something that emerges when students are given genuine questions, real intellectual tools, and the space to recognize quality in their own reasoning before being told what quality looks like.",
+    "pillars": [
+      {
+        "title": "The Pirsig Principle — Quality Before Technique",
+        "source": "Robert Pirsig, Zen and the Art of Motorcycle Maintenance",
+        "summary": "Students recognize quality in reasoning before they are taught the techniques that produce it. Anonymous writing read aloud strips away status and lets the work stand alone. The desire to understand technique comes from the desire to replicate quality already recognized. Writing is a conduit to thinking, not an end in itself.",
+        "classroomImplication": "Every unit opens with anonymous writing on an accessible prompt. The class identifies strong reasoning before frameworks are named. Frameworks arrive as explanations of what students already noticed — not mandates imposed from outside."
+      },
+      {
+        "title": "Philosophy as Analytical Tool — Not Subject Matter",
+        "source": "Ten philosophers across Western and non-Western traditions",
+        "summary": "Philosophical frameworks are taught as tools students carry and apply — not as content to be memorized and tested. Students learn what it feels like to reason consequentially, from duty, from social contract, from reciprocity — and then apply those moves to historical and contemporary questions. The goal is transfer: students who can identify which framework someone is using when they hear a political argument, and notice when frameworks are switched for convenience.",
+        "classroomImplication": "Each philosopher arrives when the unit content most needs them. Students maintain a reference card built across the year. No philosopher is introduced as a name to know — only as a way of thinking to use. The toolkit is deliberately diverse: Western and non-Western, ancient and contemporary, written from positions of power and from the margins."
+      },
+      {
+        "title": "The Tension at the Center",
+        "source": "Pirsig vs. the philosophical tradition",
+        "summary": "There is a genuine tension between the Pirsig approach and the framework approach. Pirsig argued that Quality cannot be captured by any system of rules or frameworks. Teaching philosophical frameworks as tools risks producing students who can name the framework but cannot feel whether an argument is good. This tension is not resolved — it is made explicit and treated as productive. Students who notice the contradiction are doing philosophy.",
+        "classroomImplication": "The recurring exit question is not 'which framework applies here' but 'which framework best explains your position — and where does it break down?' The second clause is the philosophical move."
+      },
+      {
+        "title": "Close Reading as Philosophical Act",
+        "source": "C3 Framework — History HS 1.1, 1.2.h",
+        "summary": "Close reading in this course is not a literacy exercise separated from historical thinking. Every close read is selected because it is a primary source in which someone is making a philosophical argument — about obligation, justice, rights, or power — using the evidence of their own historical moment. Students read not just for what the author says but for what kind of argument they are making and which framework they are using.",
+        "classroomImplication": "Each unit identifies a primary close read anchored to the opening philosophical prompt. The close read is the bridge between the thought experiment that opens the unit and the historical evidence that develops it."
+      },
+      {
+        "title": "Non-Negotiables vs. Droppables",
+        "source": "Curriculum design principle",
+        "summary": "This design is intentionally ambitious. When time pressure arrives — and it will — the distinction between non-negotiables and droppables protects the design's integrity without requiring perfection.",
+        "classroomImplication": "Non-negotiables: the opening accessible prompt, at least one anonymous writing session per unit, the philosopher reference card, the closing 'what is owed?' question. Droppables: additional prompt variations, mid-unit philosophical callbacks, extended vocabulary work, second close reads. The non-negotiables define the course. The droppables make it excellent when conditions allow."
+      },
+      {
+        "title": "Autonomy as Motivation",
+        "source": "Self-Determination Theory — Deci and Ryan",
+        "summary": "Intrinsic motivation requires autonomy, competence, and relatedness. This design builds competence through a visible toolkit developed across the year and relatedness through the anonymous writing community. Autonomy is built in at multiple points — not only at the May capstone.",
+        "classroomImplication": "Each unit offers at least two prompt options. Students choose their framework application beginning in Unit 5. The capstone asks students to generate their own prompts and evaluate each other's questions."
+      },
+      {
+        "title": "C3 Alignment",
+        "source": "APS Social Studies — Priority Standards",
+        "summary": "This design is not a supplement to C3 inquiry — it is an implementation of it. The philosophical opening prompts are compelling questions (1.1). The close reads are primary source evaluation (1.1). The before-and-after revision is interpretation defended by textual evidence (1.1). The philosopher frameworks address continuity and change (1.2.a), causes and effects (1.2.b), opposing perspectives (1.2.g), and ideas critical to American history (1.2.h).",
+        "classroomImplication": "Every unit lists the primary standards it addresses. The philosophical writing is assessable against History HS 1.1 and 1.2.h without modification to either the activity or the standard."
+      },
+      {
+        "title": "Trauma-Informed Framing",
+        "source": "Trauma-sensitive pedagogy",
+        "summary": "Several units involve content that is not equally abstract for all students. A student whose family has direct experience with systemic racism, immigration enforcement, or political violence is not in the same position as a student encountering these as historical events. The anonymous writing protocol helps. Prompts are designed so students can argue philosophically without disclosing personal connection.",
+        "classroomImplication": "Units with heavy content include a teacher note on framing. Prompts use second-person hypothetical framing rather than asking students to locate themselves in historical trauma. The option to argue philosophically without personal disclosure is always available and always obvious."
+      }
+    ]
+  },
+
+  "philosophers": [
+    {
+      "id": "mill",
+      "name": "John Stuart Mill",
+      "tradition": "Utilitarianism",
+      "origin": "Western — British",
+      "dates": "1806–1873",
+      "coreQuestion": "What produces the greatest well-being for the greatest number?",
+      "keyArgument": "Actions are right insofar as they promote happiness and wrong insofar as they produce the reverse. Mill refines Bentham by distinguishing quality of happiness — some pleasures are higher than others. Moral reasoning is essentially consequentialist: evaluate actions by their outcomes.",
+      "thoughtExperiment": "Trolley Problem — pull the lever to save five at the cost of one?",
+      "hook": "Mill's father began his education at age 3. He read Greek by 8 and Latin by 9. He later had a complete nervous breakdown and credited poetry with saving his sanity. The man who reduced morality to calculation was saved by something calculation cannot measure.",
+      "units": ["Reconstruction", "Gilded Age & Progressive Era", "WWI", "WWII", "Cold War", "Modern Era"],
+      "nonNegotiable": true
+    },
+    {
+      "id": "kant",
+      "name": "Immanuel Kant",
+      "tradition": "Deontology",
+      "origin": "Western — German",
+      "dates": "1724–1804",
+      "coreQuestion": "What is my duty, and does this action respect the dignity of every person involved?",
+      "keyArgument": "Some actions are wrong regardless of consequences. The categorical imperative: act only according to rules you would be willing to make universal. People must never be used merely as means to an end — every person has inherent dignity that cannot be traded away for good outcomes.",
+      "thoughtExperiment": "Trolley Problem footbridge variant — push one person off a bridge to stop the trolley and save five?",
+      "hook": "Kant was so punctual in his daily walk that neighbors set their clocks by him. He never traveled more than 40 miles from his birthplace his entire life. The philosopher of universal duty lived the narrowest possible life — and argued that was exactly the point.",
+      "units": ["Reconstruction", "Frontier", "WWII", "Civil Rights", "Modern Era"],
+      "nonNegotiable": true
+    },
+    {
+      "id": "locke",
+      "name": "John Locke",
+      "tradition": "Social Contract / Natural Rights",
+      "origin": "Western — British",
+      "dates": "1632–1704",
+      "coreQuestion": "What rights do people have that no government can legitimately take away?",
+      "keyArgument": "People have natural rights to life, liberty, and property that exist before government. Governments derive legitimacy only from the consent of the governed. When government violates natural rights, revolution is justified. Property rights come from mixing your labor with the land.",
+      "thoughtExperiment": "If you mix your labor with something — land, an idea, a resource — do you own it? What happens when the system that defines ownership was itself built unjustly?",
+      "hook": "Locke's ideas were so dangerous that he published his Two Treatises anonymously. The American founders borrowed from him so heavily that some passages of the Declaration are nearly direct paraphrases — yet Locke himself owned stock in the Royal African Company, which traded enslaved people.",
+      "units": ["Reconstruction", "Gilded Age & Progressive Era", "Frontier", "Civil Rights", "Modern Era"],
+      "nonNegotiable": true
+    },
+    {
+      "id": "rousseau",
+      "name": "Jean-Jacques Rousseau",
+      "tradition": "Social Contract / Collective Will",
+      "origin": "Western — French",
+      "dates": "1712–1778",
+      "coreQuestion": "What does the community as a whole owe its members, and what do members owe the community?",
+      "keyArgument": "Legitimate authority comes from the general will — the collective interest of the community, not just the sum of individual interests. Private property is a source of inequality, not freedom. Society corrupts the natural goodness of people by creating artificial hierarchies.",
+      "thoughtExperiment": "If the majority votes for something that harms a minority, is it just? What is the difference between the will of all and the general will?",
+      "hook": "Rousseau abandoned all five of his children to orphanages, then wrote one of the most influential books on education ever published. He was fully aware of the contradiction. Sometimes the clearest moral vision comes from someone who failed to live by it.",
+      "units": ["Gilded Age & Progressive Era", "1920s & Depression", "Civil Rights", "Modern Era"],
+      "nonNegotiable": false
+    },
+    {
+      "id": "rawls",
+      "name": "John Rawls",
+      "tradition": "Justice as Fairness",
+      "origin": "Western — American",
+      "dates": "1921–2002",
+      "coreQuestion": "What rules would you choose if you did not know your position in the society those rules would govern?",
+      "keyArgument": "The veil of ignorance: just rules are ones you would agree to before knowing whether you would be rich or poor, majority or minority, powerful or powerless. Inequalities are only justified if they benefit the least advantaged members of society.",
+      "thoughtExperiment": "Veil of Ignorance — design a society knowing you might be born into any position within it. What rules do you choose?",
+      "hook": "Rawls served in WWII and witnessed the aftermath of Hiroshima. He later wrote that the atomic bombing could not be justified — a direct application of his own framework to the war he had fought in. Few philosophers have tested their ideas against their own biography so directly.",
+      "units": ["1920s & Depression", "Civil Rights", "Cold War", "Modern Era"],
+      "nonNegotiable": false
+    },
+    {
+      "id": "douglass",
+      "name": "Frederick Douglass",
+      "tradition": "Applied Moral Reasoning / Natural Rights",
+      "origin": "American — African American tradition",
+      "dates": "1818–1895",
+      "coreQuestion": "When a society's practice contradicts its stated principles, which one reveals its true character?",
+      "keyArgument": "The founding documents contain the philosophical standard by which American practice stands condemned. Douglass used Locke's own framework — natural rights, consent of the governed — to indict a system Locke's ideas were used to justify. Philosophy wielded from the margins of power, not from a university chair.",
+      "thoughtExperiment": "What to the Slave is the Fourth of July? — If a document guarantees rights to all people, what does it mean that those rights are denied to millions on the day those rights are celebrated?",
+      "hook": "Douglass taught himself to read using a spelling book and by tricking white children into writing lessons. He later became the most photographed American of the 19th century — he believed images of dignified Black men were a form of political argument. He understood that representation is philosophy made visible.",
+      "units": ["Reconstruction", "Civil Rights"],
+      "nonNegotiable": true
+    },
+    {
+      "id": "singer",
+      "name": "Peter Singer",
+      "tradition": "Contemporary Utilitarianism / Global Ethics",
+      "origin": "Western — Australian",
+      "dates": "1946–present",
+      "coreQuestion": "If you can prevent something bad from happening without sacrificing anything of comparable moral importance, are you obligated to do it?",
+      "keyArgument": "Geographic and emotional distance do not change moral obligation. But the argument must be understood alongside genuine counterarguments: the demandingness problem, the systemic vs. individual action problem, the epistemic problem of knowing which interventions work, and the collective action problem. Singer himself argues for systemic change, not individual guilt.",
+      "thoughtExperiment": "The Drowning Child — you pass a shallow pond where a child is drowning. You could save them but ruin your expensive clothes. Singer then asks: what is the moral difference between that child and one dying of preventable disease across the world?",
+      "hook": "Singer is one of the most controversial philosophers alive. He donates a significant portion of his own income to effective charities — and argues his own framework still does not demand enough of him. He is consistent in a way that makes most people uncomfortable.",
+      "units": ["Modern Era"],
+      "nonNegotiable": false
+    },
+    {
+      "id": "ubuntu",
+      "name": "Ubuntu Ethics",
+      "tradition": "African Communitarian Philosophy",
+      "origin": "Non-Western — Southern and Central African",
+      "dates": "Ancient — articulated in modern form by Desmond Tutu (1931–2021) and others",
+      "coreQuestion": "What do I owe the community that made me who I am?",
+      "keyArgument": "Umuntu ngumuntu ngabantu — a person is a person through other persons. Identity, dignity, and obligation are fundamentally relational and communal, not individual. Rights and responsibilities cannot be separated. Reconciliation and restoration are moral obligations. Ubuntu directly challenges the Western assumption that the individual is the primary unit of moral concern.",
+      "thoughtExperiment": "If your identity and humanity are constituted by your community, what happens to your obligation when that community has been deliberately destroyed? Can justice be achieved without restoration of community — not just individual rights?",
+      "hook": "After apartheid ended in South Africa, Ubuntu ethics was the philosophical foundation of the Truth and Reconciliation Commission — the decision not to prosecute most perpetrators but to require public acknowledgment of wrongs. Desmond Tutu argued this was not weakness but a deeper form of justice than punishment. Whether he was right is exactly the kind of question this course asks.",
+      "units": ["Reconstruction", "WWII", "Civil Rights", "Modern Era"],
+      "nonNegotiable": false
+    },
+    {
+      "id": "deloria",
+      "name": "Vine Deloria Jr.",
+      "tradition": "Indigenous Philosophy / Reciprocity Ethics",
+      "origin": "Non-Western — Standing Rock Sioux Nation",
+      "dates": "1933–2005",
+      "coreQuestion": "What do human beings owe the land, future generations, and the communities they did not choose but belong to?",
+      "keyArgument": "Western philosophy treats land as property and time as linear — both assumptions Deloria challenges directly. Indigenous frameworks understand humans as members of a community that includes the natural world, with obligations running backward to ancestors and forward to descendants not yet born. Rights without reciprocity produce extraction, not justice.",
+      "thoughtExperiment": "If a government signs a treaty with a nation and then breaks it repeatedly over 150 years, what does justice require? Does your answer change if the broken promises also involved the destruction of a way of life, a language, and a relationship to the land that cannot be restored by money?",
+      "hook": "Deloria's book Custer Died for Your Sins (1969) opened with a joke: anthropologists descend on Indian reservations every summer like locusts, studying everything except the Indians' own understanding of themselves. He spent his career arguing that Indigenous knowledge systems were not folklore but philosophy — serious, systematic, and in many ways more adequate to the problems of the 21st century than the Western tradition that displaced them.",
+      "units": ["Frontier", "Imperialism", "Modern Era"],
+      "nonNegotiable": false
+    },
+    {
+      "id": "confucius",
+      "name": "Confucius",
+      "tradition": "Confucian Ethics / Relational Duty",
+      "origin": "Non-Western — Chinese",
+      "dates": "551–479 BCE",
+      "coreQuestion": "What do I owe the people I am in relationship with — and what does a just society owe its members in return?",
+      "keyArgument": "Moral life is constituted by relationships and the duties those relationships create. A just society requires the rectification of names — calling things what they actually are, because moral clarity begins with honest language. Leaders have obligations to those they lead that are prior to their privileges.",
+      "thoughtExperiment": "The Rectification of Names — if a king acts like a tyrant, should you call him a king? Confucius said: if names are not correct, language will not accord with truth. If language does not accord with truth, affairs cannot be accomplished. What happens to justice when the language used to describe a situation is systematically false?",
+      "hook": "Confucius spent much of his life as a political failure — traveling from state to state trying to advise rulers who mostly ignored him. He died believing he had accomplished nothing. His ideas became the foundation of Chinese civilization for 2,500 years. The gap between his biography and his influence is itself a philosophical question about what success means.",
+      "units": ["Civil Rights", "Cold War", "Modern Era"],
+      "nonNegotiable": false
+    }
+  ],
+
+  "units": [
+    {
+      "id": "reconstruction",
+      "title": "Reconstruction and Rise of Jim Crow",
+      "period": "1865–1896",
+      "order": 1,
+      "duration": "3-4 weeks (9-12 days)",
+      "thematicLens": "Promise vs. reality",
+      "closingPrompt": "What is owed to people whose labor built a society that excluded them from its benefits?",
+      "standards": ["1.1", "1.2a", "1.2g", "1.2h"],
+      "philosophicalWeight": "High",
+      "openingPrompt": {
+        "type": "Accessible Hypothetical",
+        "prompt": "A person is forced to build a house for someone else for twenty years without pay. They are then freed but left with nothing. The person who owns the house says: 'I am not forcing you to work anymore — isn't that enough?' Is it?",
+        "rationale": "Accessible to all students regardless of prior knowledge. Structurally identical to Reconstruction without historical markers. Every student can engage from lived intuitions about fairness.",
+        "alternatePrompt": "If a government makes a promise to a group of people and then breaks it, is that just a political mistake or is it a moral wrong? Does your answer change if the people promised something had no power to hold the government accountable?"
+      },
+      "philosophers": ["mill", "kant", "douglass"],
+      "frameworkFocus": "Utilitarianism vs. Deontology — does the obligation to repair come from consequences or from duty? Douglass models how to use founding principles as a philosophical standard.",
+      "closeRead": {
+        "title": "Frederick Douglass — 'What to the Slave is the Fourth of July?' (1852)",
+        "connection": "Douglass demonstrates applied moral reasoning — using the founding documents as the standard by which American practice is condemned. Students identify his framework and where it is most powerful.",
+        "type": "Primary Source"
+      },
+      "vocabulary": ["utilitarianism", "deontology", "categorical imperative", "natural rights", "social contract", "reparation", "Reconstruction", "Freedmen's Bureau"],
+      "nonNegotiables": ["Opening accessible prompt", "Anonymous writing session", "Douglass close read", "Closing 'what is owed?' prompt"],
+      "droppables": ["Alternate prompt variation", "Mid-unit philosopher callback", "Extended vocabulary activity"],
+      "materials": []
+    },
+    {
+      "id": "gilded-age",
+      "title": "Gilded Age & Progressive Era",
+      "period": "1865–1920",
+      "order": 2,
+      "duration": "4-5 weeks (20-25 days)",
+      "thematicLens": "Who decides, who pays?",
+      "closingPrompt": "When individuals accumulate enormous power, what does a just society owe the people that power affects?",
+      "standards": ["1.1", "1.2a", "1.2b", "1.2g"],
+      "philosophicalWeight": "High",
+      "openingPrompt": {
+        "type": "Disguised Historical",
+        "prompt": "A person discovers an uninhabited island and spends years clearing it, building on it, and making it productive. Others arrive later and do the same work for wages the first person sets. Who owns the island? Who decides what the wages are worth? Does it matter that the first person could not have built it alone?",
+        "rationale": "Structurally identical to the Gilded Age question of labor and capital without naming it. Students will feel the historical content land differently having argued this.",
+        "alternatePrompt": "Do people who accumulate enormous wealth through systems they did not design alone owe anything to the people whose labor built that wealth?"
+      },
+      "philosophers": ["locke", "mill", "rousseau"],
+      "frameworkFocus": "Locke's labor theory of property meets Rousseau's general will. Mill's utilitarian calculus applied to labor conditions.",
+      "closeRead": {
+        "title": "Andrew Carnegie — 'The Gospel of Wealth' (1889)",
+        "connection": "Carnegie makes an explicit philosophical argument about wealth and obligation. Students identify his framework and stress-test it against Rousseau.",
+        "type": "Primary Source"
+      },
+      "vocabulary": ["labor theory of property", "general will", "laissez-faire", "monopoly", "progressive", "muckraker", "collective action"],
+      "nonNegotiables": ["Opening disguised historical prompt", "Anonymous writing session", "Carnegie close read", "Closing 'what is owed?' prompt"],
+      "droppables": ["Rousseau full introduction", "Second close read", "Extended labor movement simulation"],
+      "materials": []
+    },
+    {
+      "id": "frontier",
+      "title": "End of the American Frontier",
+      "period": "1865–1896",
+      "order": 3,
+      "duration": "1-2 weeks (10-15 days)",
+      "thematicLens": "Who decides, who pays?",
+      "closingPrompt": "What is owed to nations whose land, language, and way of life were taken by a government that claimed to represent justice?",
+      "standards": ["1.1", "1.2b", "1.2g", "1.2h"],
+      "philosophicalWeight": "Medium-High",
+      "openingPrompt": {
+        "type": "Accessible Hypothetical",
+        "prompt": "Two communities have lived on the same land for generations. A third, more powerful group arrives, signs agreements with both, and then breaks those agreements when it becomes convenient. Years later, the powerful group offers money as compensation. The other communities say money is not the point — the agreements were about a way of life that cannot be bought back. Who is right?",
+        "rationale": "Accessible without prior knowledge. Introduces the Delorian idea that some losses are not reducible to property or money.",
+        "alternatePrompt": "If a government signs a formal agreement with a nation and breaks it, does the passage of time reduce the moral obligation to repair the wrong?"
+      },
+      "philosophers": ["deloria", "locke", "kant"],
+      "frameworkFocus": "Deloria's reciprocity ethics challenges Locke's labor theory of property directly — what does 'owning' land mean if your relationship to land is not ownership but belonging?",
+      "closeRead": {
+        "title": "Chief Joseph — Surrender Speech (1877) paired with Vine Deloria Jr. — excerpt from Custer Died for Your Sins (1969)",
+        "connection": "Two voices from inside the historical experience — 1877 and 1969 — both making philosophical arguments about what was owed. Students identify frameworks and compare across a century.",
+        "type": "Primary Source Pair"
+      },
+      "vocabulary": ["reciprocity", "sovereignty", "treaty", "assimilation", "manifest destiny", "reservation", "belonging vs. ownership"],
+      "nonNegotiables": ["Opening accessible prompt", "Deloria introduction", "Chief Joseph close read", "Closing 'what is owed?' prompt"],
+      "droppables": ["Deloria excerpt (can summarize)", "Second close read", "Extended land rights activity"],
+      "materials": []
+    },
+    {
+      "id": "imperialism",
+      "title": "American Imperialism",
+      "period": "1898–1914",
+      "order": 4,
+      "duration": "2-3 weeks (10-15 days)",
+      "thematicLens": "Who decides, who pays?",
+      "closingPrompt": "Does a powerful nation have the right to decide what is best for a less powerful one? Who pays when it is wrong?",
+      "standards": ["1.1", "1.2b", "1.2g"],
+      "philosophicalWeight": "Medium",
+      "openingPrompt": {
+        "type": "Accessible Hypothetical",
+        "prompt": "A wealthy, powerful neighbor decides that the family next door is not managing their household well. Without being asked, they take over key decisions — what the family eats, how the children are educated, who they can trade with. The neighbor genuinely believes this is helping. Is it? Does it matter whether the family asked for help?",
+        "rationale": "The paternalism question is answerable from everyday experience with authority. Good autonomy unit — students choose their own framework.",
+        "alternatePrompt": "Is it ever justified for one nation to control another for that nation's 'own good'? Which philosophical framework gives the most defensible answer?"
+      },
+      "philosophers": ["mill", "kant", "deloria"],
+      "frameworkFocus": "Mill's utilitarian argument for imperialism vs. Kant's categorical imperative. Deloria on what Western expansion actually meant for colonized peoples.",
+      "closeRead": {
+        "title": "Albert Beveridge — Senate Speech on the Philippines (1900) vs. Mark Twain — 'To the Person Sitting in Darkness' (1901)",
+        "connection": "Two contemporaries making opposite philosophical arguments. Students identify the moves each makes and evaluate which argument is stronger.",
+        "type": "Primary Source Debate Pair"
+      },
+      "vocabulary": ["imperialism", "paternalism", "sovereignty", "sphere of influence", "anti-imperialism", "colonialism"],
+      "nonNegotiables": ["Opening accessible prompt", "Beveridge/Twain close read pair", "Student framework choice", "Closing 'what is owed?' prompt"],
+      "droppables": ["Deloria connection", "Extended debate activity", "Additional primary sources"],
+      "materials": []
+    },
+    {
+      "id": "wwi",
+      "title": "World War I",
+      "period": "1914–1920",
+      "order": 5,
+      "duration": "2-3 weeks (10-15 days)",
+      "thematicLens": "Who decides, who pays?",
+      "closingPrompt": "When the decisions of the powerful lead to catastrophic suffering for ordinary people, what is owed — and by whom?",
+      "standards": ["1.1", "1.2b", "1.2g"],
+      "philosophicalWeight": "Medium",
+      "openingPrompt": {
+        "type": "Accessible Hypothetical",
+        "prompt": "Leaders of several groups make a series of decisions — each one locally rational, each one making the situation slightly worse. Eventually a catastrophe occurs that none of them wanted and all of them contributed to. Who is responsible? Is responsibility different from blame?",
+        "rationale": "The collective action and distributed responsibility question connects directly to the alliance system. First unit where students choose their own framework.",
+        "alternatePrompt": "When a government sends young people to die in a war, what justification — if any — is sufficient? Does the justification need to be true at the time, or only in retrospect?"
+      },
+      "philosophers": ["mill", "kant", "rousseau"],
+      "frameworkFocus": "Utilitarian analysis of whether WWI could be justified by outcomes. Kant on the duty to resist unjust orders. First unit where students choose their own framework application.",
+      "closeRead": {
+        "title": "Wilfred Owen — 'Dulce et Decorum Est' (1917) and Woodrow Wilson — War Message to Congress (1917)",
+        "connection": "A soldier's account and a president's justification — two radically different framings of the same war. Students identify the philosophical assumptions embedded in each.",
+        "type": "Primary Source Contrast Pair"
+      },
+      "vocabulary": ["militarism", "alliance system", "nationalism", "propaganda", "conscription", "collective responsibility", "distributed blame"],
+      "nonNegotiables": ["Opening accessible prompt", "Owen/Wilson close read pair", "Student framework choice", "Closing 'what is owed?' prompt"],
+      "droppables": ["Rousseau full application", "Extended simulation", "Additional sources"],
+      "materials": []
+    },
+    {
+      "id": "depression",
+      "title": "1920s & The Great Depression",
+      "period": "1919–1941",
+      "order": 6,
+      "duration": "3-4 weeks (10-15 days)",
+      "thematicLens": "Who decides, who pays?",
+      "closingPrompt": "When a system fails and millions suffer, what does a just government owe its people — and what can it justly demand of them?",
+      "standards": ["1.1", "1.2a", "1.2b", "1.2h"],
+      "philosophicalWeight": "High",
+      "openingPrompt": {
+        "type": "Disguised Historical",
+        "prompt": "A system that many people depend on for their survival collapses — not because of anything most of them did, but because of decisions made by a small number of people far from their lives. The government can intervene but doing so requires taking resources from people who did not cause the collapse and giving them to people who did not cause it either. Is that just?",
+        "rationale": "The redistribution question during system failure introduces Rawls. Students will feel the New Deal content land differently having argued this.",
+        "alternatePrompt": "Design a society from behind the veil of ignorance — not knowing whether you will be born wealthy or poor, employed or unemployed. What economic safety net do you build?"
+      },
+      "philosophers": ["rawls", "rousseau", "mill"],
+      "frameworkFocus": "Rawls' veil of ignorance introduced here and applied to New Deal policy design. Rousseau's general will vs. individual property rights.",
+      "closeRead": {
+        "title": "FDR — First Inaugural Address (1933) and Herbert Hoover — 'Rugged Individualism' Speech (1928)",
+        "connection": "Two presidents making opposite philosophical arguments about government obligation during economic crisis. Students identify frameworks and evaluate which the historical evidence supports.",
+        "type": "Primary Source Debate Pair"
+      },
+      "vocabulary": ["veil of ignorance", "difference principle", "rugged individualism", "general welfare", "fiscal policy", "safety net", "redistribution"],
+      "nonNegotiables": ["Rawls introduction and veil of ignorance thought experiment", "Opening disguised prompt", "FDR/Hoover close read", "Closing 'what is owed?' prompt"],
+      "droppables": ["Extended Rawls application", "Simulation activity", "Additional New Deal sources"],
+      "materials": []
+    },
+    {
+      "id": "wwii",
+      "title": "World War II",
+      "period": "1930–1945",
+      "order": 7,
+      "duration": "3-4 weeks (10-15 days)",
+      "thematicLens": "Promise vs. reality",
+      "closingPrompt": "What do ordinary people owe to strangers in danger — even at serious cost to themselves?",
+      "standards": ["1.1", "1.2b", "1.2g", "1.2h"],
+      "philosophicalWeight": "High — deploy philosophy after content is established, not on day one",
+      "openingPrompt": {
+        "type": "Accessible Hypothetical — deployed AFTER initial content, not day one",
+        "prompt": "You know that something seriously wrong is being done to people nearby. You are not doing it. Stopping it would put you at real risk. You have a family depending on you. What, if anything, do you owe the people being harmed?",
+        "rationale": "The bystander question deployed after students have enough historical context. This unit requires content before philosophy. Not on day one.",
+        "alternatePrompt": "Can a person be morally responsible for a wrong they did not commit but did not stop? Does it matter whether stopping it would have changed the outcome?"
+      },
+      "philosophers": ["kant", "mill", "ubuntu"],
+      "frameworkFocus": "Kant's categorical imperative applied to atrocity and bystander responsibility. Mill's utilitarian calculus tested at its limits. Ubuntu on what the destruction of community means morally.",
+      "closeRead": {
+        "title": "Elie Wiesel — Night (excerpt) and Hannah Arendt — 'Banality of Evil' (excerpt from Eichmann in Jerusalem)",
+        "connection": "Wiesel as witness; Arendt as philosopher analyzing how ordinary people participated in extraordinary evil. Students apply Kant and Ubuntu to Arendt's argument.",
+        "type": "Primary and Secondary Source Pair",
+        "teacherNote": "Deploy philosophical prompt only after sufficient historical context. The Holocaust must be encountered as what it was before it is encountered as a philosophical case study."
+      },
+      "vocabulary": ["categorical imperative", "bystander effect", "banality of evil", "Ubuntu", "collective guilt", "genocide", "complicity"],
+      "nonNegotiables": ["Content before philosophy sequence", "Bystander prompt after context established", "Wiesel excerpt", "Closing 'what is owed?' prompt"],
+      "droppables": ["Arendt excerpt (can summarize)", "Ubuntu application", "Extended bystander activity"],
+      "materials": []
+    },
+    {
+      "id": "coldwar",
+      "title": "Early Cold War",
+      "period": "1945–1963",
+      "order": 8,
+      "duration": "2-3 weeks (10-15 days)",
+      "thematicLens": "Technology and everyday life",
+      "closingPrompt": "When two systems each claim to represent justice and freedom, how do you evaluate which claim is stronger?",
+      "standards": ["1.1", "1.2a", "1.2b", "1.2g"],
+      "philosophicalWeight": "Medium",
+      "openingPrompt": {
+        "type": "Accessible Hypothetical",
+        "prompt": "Two groups are in conflict. Each one claims to be defending freedom. Each one claims the other is the aggressor. Each one believes its own system is just and the other's is tyrannical. How do you figure out who is telling the truth — or whether either of them is?",
+        "rationale": "Competing claims to justice maps directly onto Cold War ideology. Introduces Confucius on the rectification of names.",
+        "alternatePrompt": "Is it ever justified to risk the destruction of the world to prevent a political system you believe is unjust from spreading?"
+      },
+      "philosophers": ["confucius", "rawls", "mill"],
+      "frameworkFocus": "Confucius introduced here — the rectification of names applied to Cold War language. Rawls' veil of ignorance applied to capitalism vs. communism.",
+      "closeRead": {
+        "title": "NSC-68 (1950, declassified excerpt) — U.S. government document framing the Cold War threat",
+        "connection": "A government document making philosophical arguments about freedom and threat. Students apply Confucius — is this document using language honestly? What would rectification of names reveal?",
+        "type": "Primary Source"
+      },
+      "vocabulary": ["rectification of names", "containment", "deterrence", "ideology", "proxy war", "McCarthyism", "mutually assured destruction"],
+      "nonNegotiables": ["Confucius introduction", "Competing claims prompt", "NSC-68 close read", "Closing 'what is owed?' prompt"],
+      "droppables": ["Extended Rawls application", "Simulation activity", "Additional Cold War sources"],
+      "materials": []
+    },
+    {
+      "id": "civilrights",
+      "title": "Civil Rights Movements",
+      "period": "1945–1980",
+      "order": 9,
+      "duration": "2-3 weeks (10-15 days)",
+      "thematicLens": "Promise vs. reality",
+      "closingPrompt": "When a society's laws are unjust, what do citizens owe the law — and what does the law owe them?",
+      "standards": ["1.1", "1.2a", "1.2g", "1.2h"],
+      "philosophicalWeight": "Very High — full toolkit deployment. Straight historical prompt. Students should be ready.",
+      "openingPrompt": {
+        "type": "Straight Historical Prompt — full toolkit deployment",
+        "prompt": "If a government's laws contradict its founding principles, which one reveals its true character — the laws or the principles? And what, if anything, are citizens obligated to do about it?",
+        "rationale": "By Unit 9 students have eight months of philosophical and historical context. The straight historical prompt should produce the strongest writing of the year. The before-and-after revision becomes genuinely powerful here.",
+        "alternatePrompt": "Is civil disobedience ever morally required — not just permitted, but required? Which philosopher gives the strongest answer, and where does that answer break down?"
+      },
+      "philosophers": ["douglass", "rawls", "kant", "ubuntu"],
+      "frameworkFocus": "Douglass applies Lockean natural rights to indict the system. Rawls' veil of ignorance tests whether Jim Crow survives rational scrutiny. Ubuntu on what the Civil Rights Movement was restoring — not just rights but community and dignity.",
+      "closeRead": {
+        "title": "MLK — 'Letter from Birmingham Jail' (1963) and Malcolm X — 'The Ballot or the Bullet' (1964)",
+        "connection": "Two philosophers of liberation making different arguments about the same question. Students identify frameworks each uses and explain which they find more philosophically defensible — and why.",
+        "type": "Primary Source Philosophical Debate"
+      },
+      "vocabulary": ["civil disobedience", "Ubuntu", "beloved community", "Black nationalism", "systemic racism", "nonviolent resistance", "self-determination"],
+      "nonNegotiables": ["Straight historical prompt", "Anonymous writing with before-and-after revision", "Birmingham Jail close read", "Closing 'what is owed?' prompt"],
+      "droppables": ["Malcolm X (can summarize)", "Ubuntu extended application", "Second writing revision"],
+      "materials": []
+    },
+    {
+      "id": "modern",
+      "title": "U.S. in the Modern Era",
+      "period": "1960–Present",
+      "order": 10,
+      "duration": "2-3 weeks (10-15 days)",
+      "thematicLens": "Technology and everyday life",
+      "closingPrompt": "What do we owe people we will never meet, in places we will never go, in times that have not happened yet?",
+      "standards": ["1.1", "1.2a", "1.2b", "1.2h"],
+      "philosophicalWeight": "High — capstone. Students generate their own prompts. Full toolkit in play.",
+      "openingPrompt": {
+        "type": "Student-Generated — Capstone",
+        "prompt": "Students write the opening prompt for a contemporary question of their choosing. The prompt must force a genuine choice, be answerable from philosophical reasoning, and not have an obviously correct answer. Class rates the quality of the prompts before rating the quality of the arguments.",
+        "rationale": "By May, students who have been building the toolkit all year should be able to generate a philosophical question worth arguing. Rating the prompts themselves teaches that good questions are a skill.",
+        "alternatePrompt": "Do wealthy nations have a moral obligation to address poverty in poor ones — or does national sovereignty limit moral obligation at borders?"
+      },
+      "philosophers": ["singer", "rawls", "confucius", "ubuntu"],
+      "frameworkFocus": "Singer's contemporary utilitarianism applied to global obligation. Rawls on justice across generations. Confucius on rectification of names in contemporary political language. Ubuntu on community and obligation in a globalized world.",
+      "closeRead": {
+        "title": "Student-selected contemporary source paired with teacher-selected historical anchor",
+        "connection": "Students choose a contemporary text making a philosophical argument and identify its framework. Teacher pairs it with a historical source from earlier in the year making a structurally similar argument. Students write the connection.",
+        "type": "Student-Selected + Teacher-Anchored Pair"
+      },
+      "vocabulary": ["global obligation", "intergenerational justice", "rectification of names", "Ubuntu", "sovereignty", "effective altruism", "systemic change vs. individual action"],
+      "nonNegotiables": ["Student-generated prompts", "Student framework identification in contemporary source", "Year-long 'what is owed?' closing reflection", "Philosopher reference card completed"],
+      "droppables": ["Teacher fallback prompt", "Second close read", "Extended Singer application"],
+      "materials": []
+    }
+  ],
+
+  "writingProtocol": {
+    "title": "Anonymous Writing & Quality Recognition",
+    "inspiration": "Robert Pirsig, Zen and the Art of Motorcycle Maintenance",
+    "principles": [
+      "Recognition of quality precedes instruction in technique",
+      "Anonymity removes status — work stands alone regardless of who wrote it",
+      "The desire to understand technique comes from the desire to replicate recognized quality",
+      "Writing is a conduit to thinking, not the end product",
+      "Exit move is a short paragraph — not one sentence — rebuilding a weak argument using the framework"
+    ],
+    "sequence": [
+      "Prompt issued Thursday or at end of previous session — short, forces a choice, no research required",
+      "Students write 1–2 paragraphs, submitted anonymously before class",
+      "4–5 pieces read aloud, no names, no identifying information",
+      "Class rates each: Strong / Medium / Weak — reasoning quality only, not grammar or spelling",
+      "Discussion surfaces patterns in strong pieces — what did they do that weak ones did not?",
+      "Framework introduced as explanation of what students already noticed — not imposed from outside",
+      "Exit: students write a short paragraph rebuilding the weakest argument using the named framework",
+      "End of unit: students revise their original response with full historical knowledge and philosophical toolkit"
+    ],
+    "promptDesignPrinciples": [
+      "No obviously correct answer — but not infinitely open either",
+      "Forces a choice: defend or challenge, not merely discuss",
+      "Short — one or two sentences maximum",
+      "Accessible from lived intuition, deepened by historical knowledge",
+      "Stress-tested for embedded assumptions that constrain the argument before it starts",
+      "Framed so students can argue philosophically without disclosing personal connection to sensitive content"
+    ],
+    "autonomyMoments": [
+      "Students choose between two prompt options each unit",
+      "Students choose their own framework application beginning in Unit 5",
+      "Students evaluate quality of each other's prompts in Unit 10",
+      "Students generate their own prompts in the capstone"
+    ],
+    "aiNote": "Writing is thinking made visible. Outsourcing the writing outsources the thinking — not because of a rule, but because of what writing actually is. Students who use AI to write their arguments skip the experience of reasoning, which is the only part that does something for them. The anonymous reading often reveals this without any detection system: assembled writing feels different from argued writing. This is a literacy argument, not a disciplinary one."
+  },
+
+  "philosophySequence": {
+    "phase1": {
+      "title": "The Toolkit",
+      "timing": "Unit 1 — Reconstruction",
+      "description": "Introduce utilitarianism and deontology through an accessible hypothetical before connecting to historical content. Students receive philosopher reference card. Frameworks arrive as explanations of quality already recognized.",
+      "keyMoves": [
+        "Accessible hypothetical on day one — no prior knowledge required, every student equally equipped",
+        "Anonymous writing, class rates reasoning quality before frameworks are named",
+        "Frameworks introduced as explanations of what students already noticed in strong pieces"
+      ]
+    },
+    "phase2": {
+      "title": "Applied to History",
+      "timing": "Units 2–8",
+      "description": "Frameworks become analytical tools applied to historical questions. Disguised prompts reveal that abstract and historical reasoning are the same activity. New philosophers introduced when unit content most needs them.",
+      "keyMoves": [
+        "Disguised historical prompts — students argue a thought experiment, then discover it was the real question",
+        "90-second philosopher callback opens each session: which framework last time, what did it reveal, where did it break down?",
+        "Student framework choice introduced in Unit 5 — autonomy increases across the year",
+        "Before-and-after revision makes thinking growth visible to students themselves"
+      ]
+    },
+    "phase3": {
+      "title": "Live Questions",
+      "timing": "Units 9–10",
+      "description": "Students apply full toolkit to straight historical and contemporary questions. Unit 9 is the strongest writing of the year. Unit 10 capstone: students generate their own prompts.",
+      "keyMoves": [
+        "Students identify which framework a public argument is using",
+        "Students recognize when frameworks are switched mid-argument for convenience",
+        "Students distinguish empirical from normative claims in live debates",
+        "Capstone: student-generated prompts evaluated for quality before arguments are evaluated",
+        "Year-long 'what is owed?' closing reflection connects Unit 1 to Unit 10"
+      ]
+    }
+  }
+}

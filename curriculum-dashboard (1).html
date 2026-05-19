@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>US History Dashboard — M. Hallman</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0f0f0f;
+  --surface: #181818;
+  --surface2: #202020;
+  --surface3: #252525;
+  --border: #2a2a2a;
+  --border2: #333;
+  --accent: #c8a96e;
+  --accent2: #7eb8a4;
+  --accent3: #c47a6e;
+  --accent4: #9b8ec4;
+  --text: #e8e4dc;
+  --text2: #9a9488;
+  --text3: #5c5850;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;font-weight:300;min-height:100vh;}
+
+/* HEADER */
+header{border-bottom:1px solid var(--border);padding:22px 36px 18px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+.h-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:400;}
+.h-sub{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--text3);letter-spacing:0.1em;text-transform:uppercase;margin-top:3px;}
+.h-links{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+.h-link{font-family:'IBM Plex Mono',monospace;font-size:0.63rem;padding:5px 12px;border:1px solid var(--border2);border-radius:2px;color:var(--accent2);text-decoration:none;letter-spacing:0.05em;transition:border-color 0.15s,color 0.15s;}
+.h-link:hover{border-color:var(--accent2);color:var(--text);}
+.h-link.placeholder{color:var(--text3);border-color:var(--border);cursor:default;}
+.closing-pill{font-family:'Playfair Display',serif;font-style:italic;font-size:0.75rem;color:var(--accent);padding:5px 12px;border:1px solid var(--accent);border-radius:2px;}
+
+/* NAV */
+nav{display:flex;border-bottom:1px solid var(--border);padding:0 36px;overflow-x:auto;gap:0;}
+nav button{background:none;border:none;border-bottom:2px solid transparent;color:var(--text3);font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;padding:14px 18px 12px;cursor:pointer;white-space:nowrap;transition:color 0.15s,border-color 0.15s;margin-bottom:-1px;}
+nav button:hover{color:var(--text2);}
+nav button.active{color:var(--accent);border-bottom-color:var(--accent);}
+
+/* MAIN */
+main{padding:32px 36px;max-width:1280px;}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+
+/* TYPOGRAPHY */
+.section-label{font-family:'IBM Plex Mono',monospace;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text3);margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+.section-label+.section-label{margin-top:28px;}
+
+/* CARDS */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:20px 24px;margin-bottom:14px;}
+.card-title{font-family:'Playfair Display',serif;font-size:1rem;margin-bottom:8px;}
+.card-body{font-size:0.84rem;line-height:1.72;color:var(--text2);}
+.card-body p{margin-bottom:8px;}
+.card-body p:last-child{margin-bottom:0;}
+
+/* ACCENT BLOCKS */
+.prompt-block{background:var(--surface2);border-left:2px solid var(--accent);padding:10px 14px;font-size:0.83rem;line-height:1.68;color:var(--text);border-radius:0 2px 2px 0;margin-bottom:8px;}
+.prompt-block.alt{border-left-color:var(--text3);color:var(--text2);font-size:0.8rem;}
+.hook-block{background:var(--surface2);border-left:2px solid var(--accent2);padding:10px 14px;font-size:0.82rem;line-height:1.65;color:var(--text2);font-style:italic;border-radius:0 2px 2px 0;margin-top:12px;}
+.note-block{background:var(--surface2);border-left:2px solid var(--accent3);padding:10px 14px;font-size:0.8rem;line-height:1.65;color:var(--accent3);border-radius:0 2px 2px 0;margin-top:10px;}
+
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.tag{font-family:'IBM Plex Mono',monospace;font-size:0.58rem;padding:3px 8px;border-radius:2px;letter-spacing:0.04em;}
+.tag-unit{border:1px solid var(--border2);color:var(--text3);}
+.tag-std{border:1px solid #2a3a2a;background:#1a2a1a;color:#6a9a6a;}
+.tag-nn{border:1px solid #3a2a1a;background:#2a1a0a;color:var(--accent);}
+.tag-drop{border:1px solid var(--border);color:var(--text3);}
+.tag-weight-high{border:1px solid #3a2a1a;background:#1e1208;color:var(--accent);}
+.tag-weight-med{border:1px solid #1a2a2a;background:#0a1a1a;color:var(--accent2);}
+
+/* GRIDS */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.phil-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px;}
+.unit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:14px;}
+
+/* PHILOSOPHER CARD */
+.phil-card{background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:20px 22px;position:relative;overflow:hidden;}
+.phil-card .accent-bar{position:absolute;top:0;left:0;width:3px;height:100%;}
+.phil-card.western .accent-bar{background:var(--accent);}
+.phil-card.nonwestern .accent-bar{background:var(--accent2);}
+.phil-name{font-family:'Playfair Display',serif;font-size:1rem;margin-bottom:2px;}
+.phil-tradition{font-family:'IBM Plex Mono',monospace;font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;}
+.phil-card.western .phil-tradition{color:var(--accent);}
+.phil-card.nonwestern .phil-tradition{color:var(--accent2);}
+.phil-dates{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;color:var(--text3);margin-left:8px;}
+.phil-origin{font-family:'IBM Plex Mono',monospace;font-size:0.58rem;color:var(--text3);letter-spacing:0.04em;margin-bottom:10px;}
+.field-label{font-family:'IBM Plex Mono',monospace;font-size:0.59rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text3);margin-bottom:4px;margin-top:10px;}
+.field-value{font-size:0.83rem;line-height:1.65;color:var(--text2);}
+
+/* UNIT CARD */
+.unit-card{background:var(--surface);border:1px solid var(--border);border-radius:3px;overflow:hidden;}
+.unit-header{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:10px;}
+.unit-num{font-family:'IBM Plex Mono',monospace;font-size:0.62rem;color:var(--text3);}
+.unit-title-text{font-family:'Playfair Display',serif;font-size:0.95rem;flex:1;}
+.unit-period{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;color:var(--text3);}
+.unit-body{padding:14px 18px;}
+.unit-section{margin-bottom:12px;}
+.unit-section:last-child{margin-bottom:0;}
+.expand-btn{background:none;border:1px solid var(--border);color:var(--text3);font-family:'IBM Plex Mono',monospace;font-size:0.6rem;letter-spacing:0.06em;padding:4px 10px;cursor:pointer;border-radius:2px;margin-top:6px;transition:color 0.15s,border-color 0.15s;}
+.expand-btn:hover{color:var(--accent);border-color:var(--accent);}
+.expandable{display:none;}
+.expandable.open{display:block;}
+
+/* QUESTION BANK */
+.qbank-filters{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;}
+.filter-btn{background:none;border:1px solid var(--border);color:var(--text3);font-family:'IBM Plex Mono',monospace;font-size:0.63rem;letter-spacing:0.06em;padding:5px 12px;cursor:pointer;border-radius:2px;transition:all 0.15s;}
+.filter-btn:hover,.filter-btn.active{color:var(--accent);border-color:var(--accent);}
+.qentry{background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:14px 18px;margin-bottom:8px;display:flex;gap:16px;align-items:flex-start;}
+.qtype-badge{font-family:'IBM Plex Mono',monospace;font-size:0.58rem;padding:3px 7px;border-radius:2px;display:inline-block;margin-bottom:5px;white-space:nowrap;}
+.qtype-badge.hypothetical{background:#1a2a1a;color:var(--accent2);border:1px solid #2a3a2a;}
+.qtype-badge.disguised{background:#1a1a2a;color:var(--accent4);border:1px solid #2a2a3a;}
+.qtype-badge.historical{background:#2a1a0a;color:var(--accent);border:1px solid #3a2a1a;}
+.qtype-badge.capstone{background:#2a1a2a;color:#c47ab8;border:1px solid #3a2a3a;}
+.qunit-name{font-family:'IBM Plex Mono',monospace;font-size:0.58rem;color:var(--text3);margin-top:4px;}
+.qtext{font-size:0.84rem;line-height:1.7;color:var(--text);flex:1;}
+.qleft{flex-shrink:0;width:100px;}
+
+/* WRITING PROTOCOL */
+.step-list{list-style:none;counter-reset:steps;}
+.step-list li{counter-increment:steps;display:flex;gap:14px;align-items:flex-start;margin-bottom:10px;}
+.step-list li::before{content:counter(steps);font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:var(--accent);background:var(--surface2);border:1px solid var(--border);width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:2px;flex-shrink:0;margin-top:2px;}
+.step-list li span{font-size:0.84rem;line-height:1.7;color:var(--text2);padding-top:3px;}
+.dash-list{list-style:none;}
+.dash-list li{padding:8px 0;border-bottom:1px solid var(--border);font-size:0.84rem;line-height:1.65;color:var(--text2);display:flex;gap:10px;}
+.dash-list li::before{content:'—';color:var(--accent);font-family:'IBM Plex Mono',monospace;flex-shrink:0;}
+.dash-list li:last-child{border-bottom:none;}
+
+/* FOUNDATIONS */
+.pillar-card{background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:20px 24px;margin-bottom:12px;}
+.pillar-title{font-family:'Playfair Display',serif;font-size:1rem;margin-bottom:4px;}
+.pillar-source{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;color:var(--text3);letter-spacing:0.06em;margin-bottom:12px;}
+.pillar-summary{font-size:0.84rem;line-height:1.72;color:var(--text2);margin-bottom:10px;}
+.pillar-implication{background:var(--surface2);border-left:2px solid var(--accent4);padding:10px 14px;font-size:0.81rem;line-height:1.65;color:var(--text2);border-radius:0 2px 2px 0;}
+.pillar-impl-label{font-family:'IBM Plex Mono',monospace;font-size:0.58rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent4);margin-bottom:5px;}
+
+/* STANDARDS */
+.std-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-bottom:24px;}
+.std-card{background:var(--surface);border:1px solid #2a3a2a;border-radius:3px;padding:14px 16px;}
+.std-code{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:#6a9a6a;letter-spacing:0.06em;margin-bottom:6px;}
+.std-desc{font-size:0.82rem;line-height:1.65;color:var(--text2);}
+
+/* ARCH */
+.lens-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px;}
+.lens-card{background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:18px 20px;text-align:center;}
+.lens-num{font-family:'IBM Plex Mono',monospace;font-size:0.58rem;color:var(--text3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+.lens-text{font-family:'Playfair Display',serif;font-style:italic;font-size:0.9rem;line-height:1.5;}
+.closing-banner{background:var(--surface);border:1px solid var(--accent);border-radius:3px;padding:20px 28px;text-align:center;margin-bottom:24px;}
+.closing-banner .label{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+.closing-banner .prompt{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;}
+.phase-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.phase-card{background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:18px 20px;}
+.phase-num{font-family:'IBM Plex Mono',monospace;font-size:0.58rem;color:var(--accent2);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;}
+.phase-title{font-family:'Playfair Display',serif;font-size:0.95rem;margin-bottom:4px;}
+.phase-timing{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;color:var(--text3);margin-bottom:10px;}
+.phase-desc{font-size:0.82rem;line-height:1.65;color:var(--text2);margin-bottom:10px;}
+.phase-moves{list-style:none;}
+.phase-moves li{font-size:0.79rem;line-height:1.6;color:var(--text3);padding:4px 0 4px 12px;border-top:1px solid var(--border);position:relative;}
+.phase-moves li::before{content:'›';position:absolute;left:0;color:var(--accent);}
+
+/* MATERIALS */
+.mat-placeholder{background:var(--surface);border:1px dashed var(--border);border-radius:3px;padding:28px;text-align:center;color:var(--text3);font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;}
+.mat-entry{background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:12px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;}
+.mat-type{font-family:'IBM Plex Mono',monospace;font-size:0.58rem;color:var(--text3);width:80px;flex-shrink:0;}
+.mat-title{font-size:0.84rem;color:var(--text);flex:1;}
+.mat-link{font-family:'IBM Plex Mono',monospace;font-size:0.63rem;color:var(--accent2);text-decoration:none;}
+.mat-link:hover{text-decoration:underline;}
+
+/* OVERVIEW TABLE */
+.overview-table{width:100%;border-collapse:collapse;font-size:0.8rem;}
+.overview-table th{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text3);padding:8px 12px;text-align:left;border-bottom:1px solid var(--border2);background:var(--surface);}
+.overview-table td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text2);}
+.overview-table tr:hover td{background:var(--surface);}
+.overview-table td:first-child{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--text3);white-space:nowrap;}
+.overview-table td.unit-name-cell{font-family:'Playfair Display',serif;font-size:0.88rem;color:var(--text);}
+.lens-dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;vertical-align:middle;}
+.lens-dot.lens0{background:var(--accent2);}
+.lens-dot.lens1{background:var(--accent);}
+.lens-dot.lens2{background:var(--accent4);}
+
+/* LOADING */
+#loading{padding:60px 36px;font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--text3);letter-spacing:0.08em;}
+
+/* PHIL ORIGIN LEGEND */
+.legend{display:flex;gap:18px;margin-bottom:18px;align-items:center;}
+.legend-item{display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:0.62rem;color:var(--text3);}
+.legend-bar{width:10px;height:14px;border-radius:1px;}
+.legend-bar.western{background:var(--accent);}
+.legend-bar.nonwestern{background:var(--accent2);}
+
+@media(max-width:800px){
+  header{padding:16px 20px;}
+  main{padding:20px;}
+  nav{padding:0 20px;}
+  .two-col,.three-col,.lens-row,.phase-row{grid-template-columns:1fr;}
+  .phil-grid,.unit-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="h-title">US History — Curriculum Dashboard</div>
+    <div class="h-sub">M. Hallman &nbsp;·&nbsp; Aurora Public Schools &nbsp;·&nbsp; 2026–27</div>
+  </div>
+  <div class="h-links" id="h-links">
+    <span class="closing-pill" id="closing-pill"></span>
+  </div>
+</header>
+
+<nav id="tab-nav">
+  <button class="active" data-tab="overview">Unit Overview</button>
+  <button data-tab="architecture">Architecture</button>
+  <button data-tab="philosophers">Philosophers</button>
+  <button data-tab="units">Unit Detail</button>
+  <button data-tab="questions">Question Bank</button>
+  <button data-tab="writing">Writing Protocol</button>
+  <button data-tab="foundations">Foundations</button>
+  <button data-tab="materials">Materials</button>
+</nav>
+
+<main>
+  <div id="loading">Loading curriculum data…</div>
+
+  <!-- OVERVIEW -->
+  <div class="tab-panel" id="tab-overview">
+    <div class="section-label">Priority Standards</div>
+    <div class="std-grid" id="std-grid"></div>
+    <div class="section-label">Ten Units at a Glance</div>
+    <table class="overview-table" id="overview-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Unit</th>
+          <th>Period</th>
+          <th>Duration</th>
+          <th>Lens</th>
+          <th>Phil. Weight</th>
+          <th>Standards</th>
+          <th>Philosophers</th>
+        </tr>
+      </thead>
+      <tbody id="overview-body"></tbody>
+    </table>
+  </div>
+
+  <!-- ARCHITECTURE -->
+  <div class="tab-panel" id="tab-architecture">
+    <div class="section-label">Year-Long Thematic Lenses</div>
+    <div class="lens-row" id="lens-row"></div>
+    <div class="closing-banner" id="closing-banner"></div>
+    <div class="section-label">Philosophy Arc — Three Phases</div>
+    <div class="phase-row" id="phase-row"></div>
+  </div>
+
+  <!-- PHILOSOPHERS -->
+  <div class="tab-panel" id="tab-philosophers">
+    <div class="legend">
+      <div class="legend-item"><div class="legend-bar western"></div>Western tradition</div>
+      <div class="legend-item"><div class="legend-bar nonwestern"></div>Non-Western tradition</div>
+    </div>
+    <div class="section-label">Non-Negotiable Philosophers</div>
+    <div class="phil-grid" id="phil-grid-nn"></div>
+    <div class="section-label" style="margin-top:24px;">Supporting Philosophers</div>
+    <div class="phil-grid" id="phil-grid-support"></div>
+  </div>
+
+  <!-- UNIT DETAIL -->
+  <div class="tab-panel" id="tab-units">
+    <div class="section-label">Unit-by-Unit Design</div>
+    <div class="unit-grid" id="unit-grid"></div>
+  </div>
+
+  <!-- QUESTION BANK -->
+  <div class="tab-panel" id="tab-questions">
+    <div class="section-label">All Opening Prompts</div>
+    <div class="qbank-filters" id="qbank-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="hypothetical">Hypothetical</button>
+      <button class="filter-btn" data-filter="disguised">Disguised Historical</button>
+      <button class="filter-btn" data-filter="historical">Historical</button>
+      <button class="filter-btn" data-filter="capstone">Capstone</button>
+    </div>
+    <div id="qbank-list"></div>
+  </div>
+
+  <!-- WRITING PROTOCOL -->
+  <div class="tab-panel" id="tab-writing">
+    <div class="section-label">Pirsig Protocol — Anonymous Writing & Quality Recognition</div>
+    <div class="two-col" style="margin-bottom:16px;">
+      <div>
+        <div class="card">
+          <div class="card-title">Session Sequence</div>
+          <ol class="step-list" id="step-list"></ol>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom:14px;">
+          <div class="card-title">Prompt Design Principles</div>
+          <ul class="dash-list" id="prompt-principles"></ul>
+        </div>
+        <div class="card">
+          <div class="card-title">Autonomy Moments</div>
+          <ul class="dash-list" id="autonomy-list"></ul>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">On AI & Student Writing</div>
+      <div class="card-body" id="ai-note"></div>
+    </div>
+  </div>
+
+  <!-- FOUNDATIONS -->
+  <div class="tab-panel" id="tab-foundations">
+    <div class="section-label">Pedagogical Rationale</div>
+    <div class="card" style="margin-bottom:24px;">
+      <div class="card-body" id="foundations-core"></div>
+    </div>
+    <div id="pillars-list"></div>
+  </div>
+
+  <!-- MATERIALS -->
+  <div class="tab-panel" id="tab-materials">
+    <div class="section-label">Materials by Unit</div>
+    <div id="materials-list"></div>
+  </div>
+
+</main>
+
+<script>
+const DATA_URL = 'curriculum-data.json';
+
+// TABS
+document.querySelectorAll('[data-tab]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-tab]').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+const LENS_COLORS = ['lens0','lens1','lens2'];
+
+function lensIndex(lensText, lenses) {
+  return lenses.indexOf(lensText);
+}
+
+async function init() {
+  let d;
+  try {
+    const r = await fetch(DATA_URL);
+    d = await r.json();
+  } catch(e) {
+    document.getElementById('loading').textContent = 'Could not load curriculum-data.json — make sure it is in the same directory.';
+    return;
+  }
+  document.getElementById('loading').remove();
+  document.querySelector('.tab-panel').classList.add('active');
+
+  renderHeader(d);
+  renderOverview(d);
+  renderArchitecture(d);
+  renderPhilosophers(d);
+  renderUnits(d);
+  renderQuestions(d);
+  renderWriting(d);
+  renderFoundations(d);
+  renderMaterials(d);
+}
+
+function renderHeader(d) {
+  document.getElementById('closing-pill').textContent = '"' + d.course.closingPrompt + '"';
+  const links = document.getElementById('h-links');
+
+  if (d.course.districtCurriculumMap) {
+    const a = document.createElement('a');
+    a.className = 'h-link';
+    a.href = d.course.districtCurriculumMap;
+    a.target = '_blank';
+    a.textContent = 'District Map ↗';
+    links.insertBefore(a, links.firstChild);
+  }
+  if (d.course.lessonPlanTemplate) {
+    const a = document.createElement('a');
+    a.className = 'h-link';
+    a.href = d.course.lessonPlanTemplate;
+    a.target = '_blank';
+    a.textContent = 'Lesson Template ↗';
+    links.insertBefore(a, links.firstChild);
+  } else {
+    const s = document.createElement('span');
+    s.className = 'h-link placeholder';
+    s.textContent = 'Lesson Template (soon)';
+    links.insertBefore(s, links.firstChild);
+  }
+}
+
+function renderOverview(d) {
+  const sg = document.getElementById('std-grid');
+  d.course.priorityStandards.forEach(s => {
+    sg.innerHTML += `<div class="std-card"><div class="std-code">${s.code}</div><div class="std-desc">${s.description}</div></div>`;
+  });
+
+  const tb = document.getElementById('overview-body');
+  d.units.forEach(u => {
+    const li = lensIndex(u.thematicLens, d.course.thematicLenses);
+    const lc = LENS_COLORS[li] || 'lens0';
+    const stds = u.standards.map(sid => {
+      const s = d.course.priorityStandards.find(p => p.id === sid);
+      return s ? `<span class="tag tag-std">${s.code.replace('History HS ','')}</span>` : '';
+    }).join('');
+    const phils = u.philosophers.map(pid => {
+      const p = d.philosophers.find(ph => ph.id === pid);
+      return p ? `<span class="tag tag-unit">${p.name.split(' ').pop()}</span>` : '';
+    }).join('');
+    const wt = u.philosophicalWeight.toLowerCase();
+    const wtClass = wt.includes('high') || wt.includes('very') ? 'tag-weight-high' : 'tag-weight-med';
+    const wtShort = wt.includes('very') ? 'Very High' : wt.includes('high') ? 'High' : wt.includes('medium') ? 'Medium' : 'Med-High';
+
+    tb.innerHTML += `<tr>
+      <td>${String(u.order).padStart(2,'0')}</td>
+      <td class="unit-name-cell">${u.title}</td>
+      <td>${u.period}</td>
+      <td>${u.duration}</td>
+      <td><span class="lens-dot ${lc}"></span>${u.thematicLens}</td>
+      <td><span class="tag ${wtClass}">${wtShort}</span></td>
+      <td><div class="tags">${stds}</div></td>
+      <td><div class="tags">${phils}</div></td>
+    </tr>`;
+  });
+}
+
+function renderArchitecture(d) {
+  const lr = document.getElementById('lens-row');
+  d.course.thematicLenses.forEach((l,i) => {
+    lr.innerHTML += `<div class="lens-card">
+      <div class="lens-num">Lens ${String(i+1).padStart(2,'0')}</div>
+      <div class="lens-text">${l}</div>
+    </div>`;
+  });
+
+  document.getElementById('closing-banner').innerHTML = `
+    <div class="label">Year-Long Closing Prompt — Every Unit</div>
+    <div class="prompt">"${d.course.closingPrompt}"</div>`;
+
+  const pr = document.getElementById('phase-row');
+  const seq = d.philosophySequence;
+  [seq.phase1, seq.phase2, seq.phase3].forEach((ph, i) => {
+    const moves = ph.keyMoves.map(m => `<li>${m}</li>`).join('');
+    pr.innerHTML += `<div class="phase-card">
+      <div class="phase-num">Phase ${String(i+1).padStart(2,'0')}</div>
+      <div class="phase-title">${ph.title}</div>
+      <div class="phase-timing">${ph.timing}</div>
+      <div class="phase-desc">${ph.description}</div>
+      <ul class="phase-moves">${moves}</ul>
+    </div>`;
+  });
+}
+
+function renderPhilosophers(d) {
+  const nn = document.getElementById('phil-grid-nn');
+  const sup = document.getElementById('phil-grid-support');
+
+  d.philosophers.forEach(p => {
+    const isWestern = p.origin.toLowerCase().startsWith('western');
+    const cls = isWestern ? 'western' : 'nonwestern';
+    const units = p.units.map(u => `<span class="tag tag-unit">${u}</span>`).join('');
+    const html = `<div class="phil-card ${cls}">
+      <div class="accent-bar"></div>
+      <div class="phil-name">${p.name} <span class="phil-dates">${p.dates}</span></div>
+      <div class="phil-tradition">${p.tradition}</div>
+      <div class="phil-origin">${p.origin}</div>
+      <div class="field-label">Core Question</div>
+      <div class="field-value">${p.coreQuestion}</div>
+      <div class="field-label">Key Argument</div>
+      <div class="field-value">${p.keyArgument}</div>
+      <div class="field-label">Thought Experiment</div>
+      <div class="field-value">${p.thoughtExperiment}</div>
+      <div class="hook-block">${p.hook}</div>
+      <div class="tags" style="margin-top:12px;">${units}</div>
+    </div>`;
+    if (p.nonNegotiable) nn.innerHTML += html;
+    else sup.innerHTML += html;
+  });
+}
+
+function renderUnits(d) {
+  const grid = document.getElementById('unit-grid');
+  d.units.forEach(u => {
+    const phils = u.philosophers.map(pid => {
+      const p = d.philosophers.find(ph => ph.id === pid);
+      return p ? `<span class="tag tag-unit">${p.name.split(' ').pop()}</span>` : '';
+    }).join('');
+    const stds = u.standards.map(sid => {
+      const s = d.course.priorityStandards.find(p => p.id === sid);
+      return s ? `<span class="tag tag-std">${s.code.replace('History HS ','')}</span>` : '';
+    }).join('');
+    const nn = u.nonNegotiables.map(n => `<span class="tag tag-nn">${n}</span>`).join('');
+    const drop = u.droppables.map(n => `<span class="tag tag-drop">${n}</span>`).join('');
+    const vocab = u.vocabulary.map(v => `<span class="tag tag-unit">${v}</span>`).join('');
+    const crNote = u.closeRead.teacherNote ? `<div class="note-block">⚠ ${u.closeRead.teacherNote}</div>` : '';
+    const altBtn = u.openingPrompt.alternatePrompt
+      ? `<button class="expand-btn" onclick="toggleAlt(this)">Show alternate prompt</button>
+         <div class="expandable"><div class="prompt-block alt">${u.openingPrompt.alternatePrompt}</div></div>`
+      : '';
+
+    grid.innerHTML += `<div class="unit-card">
+      <div class="unit-header">
+        <span class="unit-num">Unit ${String(u.order).padStart(2,'0')}</span>
+        <span class="unit-title-text">${u.title}</span>
+        <span class="unit-period">${u.period}</span>
+      </div>
+      <div class="unit-body">
+        <div class="unit-section">
+          <div class="section-label" style="margin-bottom:6px;margin-top:0;">Lens · Duration</div>
+          <div style="font-size:0.82rem;color:var(--text2);">${u.thematicLens} &nbsp;·&nbsp; ${u.duration}</div>
+        </div>
+        <div class="unit-section">
+          <div class="section-label" style="margin-bottom:6px;margin-top:0;">Closing Prompt</div>
+          <div style="font-style:italic;font-size:0.83rem;color:var(--accent);">"${u.closingPrompt}"</div>
+        </div>
+        <div class="unit-section">
+          <div class="section-label" style="margin-bottom:6px;margin-top:0;">Opening Prompt — ${u.openingPrompt.type}</div>
+          <div class="prompt-block">${u.openingPrompt.prompt}</div>
+          <div style="font-size:0.76rem;color:var(--text3);margin-top:4px;">${u.openingPrompt.rationale}</div>
+          ${altBtn}
+        </div>
+        <div class="unit-section">
+          <div class="section-label" style="margin-bottom:6px;margin-top:0;">Close Read</div>
+          <div style="font-size:0.83rem;color:var(--text);margin-bottom:4px;">${u.closeRead.title}</div>
+          <div style="font-size:0.79rem;color:var(--text2);">${u.closeRead.connection}</div>
+          <div class="tags"><span class="tag tag-unit">${u.closeRead.type}</span></div>
+          ${crNote}
+        </div>
+        <div class="unit-section">
+          <div class="section-label" style="margin-bottom:6px;margin-top:0;">Framework Focus</div>
+          <div style="font-size:0.82rem;color:var(--text2);">${u.frameworkFocus}</div>
+        </div>
+        <div class="unit-section">
+          <div class="section-label" style="margin-bottom:6px;margin-top:0;">Philosophers · Standards</div>
+          <div class="tags">${phils}${stds}</div>
+        </div>
+        <div class="unit-section">
+          <div class="section-label" style="margin-bottom:6px;margin-top:0;">Non-Negotiables</div>
+          <div class="tags">${nn}</div>
+        </div>
+        <div class="unit-section">
+          <div class="section-label" style="margin-bottom:6px;margin-top:0;">Droppables</div>
+          <div class="tags">${drop}</div>
+        </div>
+        <div class="unit-section">
+          <button class="expand-btn" onclick="toggleVocab(this)">Show vocabulary (${u.vocabulary.length})</button>
+          <div class="expandable"><div class="tags" style="margin-top:8px;">${vocab}</div></div>
+        </div>
+      </div>
+    </div>`;
+  });
+}
+
+function toggleAlt(btn) {
+  const el = btn.nextElementSibling;
+  el.classList.toggle('open');
+  btn.textContent = el.classList.contains('open') ? 'Hide alternate prompt' : 'Show alternate prompt';
+}
+function toggleVocab(btn) {
+  const el = btn.nextElementSibling;
+  el.classList.toggle('open');
+  const n = btn.textContent.match(/\d+/)?.[0] || '';
+  btn.textContent = el.classList.contains('open') ? `Hide vocabulary` : `Show vocabulary (${n})`;
+}
+
+function renderQuestions(d) {
+  const list = document.getElementById('qbank-list');
+  const entries = [];
+
+  d.units.forEach(u => {
+    const op = u.openingPrompt;
+    let type = 'hypothetical';
+    if (op.type.toLowerCase().includes('disguised')) type = 'disguised';
+    else if (op.type.toLowerCase().includes('straight historical')) type = 'historical';
+    else if (op.type.toLowerCase().includes('capstone') || op.type.toLowerCase().includes('student')) type = 'capstone';
+
+    entries.push({ type, unit: u.title, order: u.order, text: op.prompt });
+    if (op.alternatePrompt) {
+      entries.push({ type: type === 'capstone' ? 'capstone' : 'historical', unit: u.title + ' (alt)', order: u.order, text: op.alternatePrompt });
+    }
+  });
+
+  function render(filter) {
+    list.innerHTML = '';
+    entries.filter(e => filter === 'all' || e.type === filter).forEach(e => {
+      list.innerHTML += `<div class="qentry">
+        <div class="qleft">
+          <span class="qtype-badge ${e.type}">${e.type}</span>
+          <div class="qunit-name">Unit ${String(e.order).padStart(2,'0')} — ${e.unit}</div>
+        </div>
+        <div class="qtext">${e.text}</div>
+      </div>`;
+    });
+    if (!list.innerHTML) list.innerHTML = '<div style="color:var(--text3);font-family:\'IBM Plex Mono\',monospace;font-size:0.72rem;padding:20px 0;">No entries for this filter.</div>';
+  }
+
+  render('all');
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      render(btn.dataset.filter);
+    });
+  });
+}
+
+function renderWriting(d) {
+  const wp = d.writingProtocol;
+  const sl = document.getElementById('step-list');
+  wp.sequence.forEach(s => { sl.innerHTML += `<li><span>${s}</span></li>`; });
+
+  const pp = document.getElementById('prompt-principles');
+  wp.promptDesignPrinciples.forEach(p => { pp.innerHTML += `<li>${p}</li>`; });
+
+  const al = document.getElementById('autonomy-list');
+  wp.autonomyMoments.forEach(a => { al.innerHTML += `<li>${a}</li>`; });
+
+  document.getElementById('ai-note').innerHTML = `<p>${wp.aiNote}</p>`;
+}
+
+function renderFoundations(d) {
+  const f = d.foundations;
+  document.getElementById('foundations-core').innerHTML = `<p>${f.coreArgument}</p>`;
+  const pl = document.getElementById('pillars-list');
+  f.pillars.forEach(p => {
+    pl.innerHTML += `<div class="pillar-card">
+      <div class="pillar-title">${p.title}</div>
+      <div class="pillar-source">${p.source}</div>
+      <div class="pillar-summary">${p.summary}</div>
+      <div class="pillar-implication">
+        <div class="pillar-impl-label">Classroom Implication</div>
+        ${p.classroomImplication}
+      </div>
+    </div>`;
+  });
+}
+
+function renderMaterials(d) {
+  const ml = document.getElementById('materials-list');
+  d.units.forEach(u => {
+    ml.innerHTML += `<div class="section-label" style="margin-top:20px;">Unit ${u.order} — ${u.title}</div>`;
+    if (u.materials && u.materials.length > 0) {
+      u.materials.forEach(m => {
+        ml.innerHTML += `<div class="mat-entry">
+          <span class="mat-type">${m.type}</span>
+          <span class="mat-title">${m.title}</span>
+          ${m.url ? `<a class="mat-link" href="${m.url}" target="_blank">${m.url}</a>` : ''}
+        </div>`;
+      });
+    } else {
+      ml.innerHTML += `<div class="mat-placeholder">No materials linked yet — add entries to the "materials" array for this unit in curriculum-data.json</div>`;
+    }
+  });
+}
+
+init();
+</script>
+</body>
+</html>
